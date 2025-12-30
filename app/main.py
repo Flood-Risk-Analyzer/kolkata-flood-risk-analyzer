@@ -12,12 +12,12 @@ from app.model_loader import predict_risk
 # -------------------------------------------------
 app = FastAPI(title="Kolkata Flood Risk API")
 
-# -------------------------------------------------
-# CORS (for React frontend)
-# -------------------------------------------------
+# 🚨 CORS MUST COME IMMEDIATELY AFTER app creation
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # OK for local + hackathon
+    allow_origins=[
+        "https://kolkata-flood-risk-analyzer.vercel.app"
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
