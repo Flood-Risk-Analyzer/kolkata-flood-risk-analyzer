@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import { MapContainer, TileLayer, GeoJSON, useMap } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 
-const API_BASE = "http://127.0.0.1:8000";
+const API_BASE = "https://kolkata-flood-risk-api.onrender.com";
+
 
 function FitBounds({ data }) {
   const map = useMap();
