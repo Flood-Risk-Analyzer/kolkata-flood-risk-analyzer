@@ -1,0 +1,53 @@
+#root {
+  min-height: 100vh;
+}
+
+/* Main content area (everything except sidebar) */
+.app-content {
+  margin-left: 320px;     /* sidebar width + spacing */
+  padding: 48px;
+  min-height: 100vh;
+}
+
+/* Analyzer layout */
+.analyzer-page {
+  max-width: 900px;
+}
+
+/* Cards */
+.card {
+  background: rgba(2, 6, 23, 0.85);
+  border: 1px solid #1e293b;
+  border-radius: 14px;
+  padding: 24px;
+  margin-top: 24px;
+}
+
+.result-card {
+  background: rgba(2, 6, 23, 0.85);
+  border: 1px solid #1e293b;
+  border-radius: 14px;
+  padding: 20px;
+  margin-top: 24px;
+}
+
+select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #334155;
+  background: #020617;
+  color: #e5e7eb;
+  margin-bottom: 14px;
+}
+
+.or {
+  text-align: center;
+  margin: 14px 0;
+  opacity: 0.6;
+}
+
+.error {
+  color: #f87171;
+  margin-top: 12px;
+}

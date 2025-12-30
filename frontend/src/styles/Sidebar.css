@@ -1,0 +1,109 @@
+.sidebar {
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  bottom: 16px;
+
+  width: 280px;
+  padding: 18px;
+
+  background: rgba(8, 58, 66, 0.22);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  z-index: 99999;
+  transition: width 0.25s ease;
+
+  display: flex;
+  flex-direction: column;
+}
+
+/* COLLAPSED — SAME FEEL, JUST NARROW */
+.sidebar.collapsed {
+  width: 84px; /* same as before, no fat rail */
+}
+
+/* HEADER */
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 28px;
+  color: white;
+}
+
+.logo {
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+/* TOGGLE */
+.toggle-btn {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.85);
+  cursor: pointer;
+  padding: 4px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.toggle-btn .rotated {
+  transform: rotate(180deg);
+  transition: transform 0.25s ease;
+}
+
+/* NAV LIST — TOP ALIGNED */
+.nav-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* NAV ITEMS */
+.nav-links a {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  padding: 12px 14px;
+  border-radius: 14px;
+
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+/* Hover */
+.nav-links a:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: white;
+}
+
+/* Active */
+.nav-links a.active {
+  background: rgba(255, 255, 255, 0.18);
+  color: white;
+}
+
+/* COLLAPSED MODE — MINIMAL CHANGES */
+.sidebar.collapsed .nav-links a {
+  gap: 0;
+  padding: 12px;        /* slightly tighter */
+  justify-content: flex-start;
+}
+
+.sidebar.collapsed .nav-links span {
+  display: none;
+}

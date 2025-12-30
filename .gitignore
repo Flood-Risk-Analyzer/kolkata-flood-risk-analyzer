@@ -1,0 +1,5 @@
+.env 
+data/grid_features_final_with_interactions.csv 
+data/*.csv 
+__pycache__/ 
+node_modules/ 

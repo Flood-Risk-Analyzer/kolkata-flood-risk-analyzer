@@ -1,0 +1,205 @@
+/* ========= RESET ========= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  font-family: system-ui, sans-serif;
+  overflow: hidden;
+  margin: 0;
+
+  /* Base flood background (deep → mid teal) */
+  background: linear-gradient(
+    to bottom,
+    #083A42 0%,
+    #083A42 55%,
+    #155E6D 100%
+  );
+}
+
+/* ========= HERO ========= */
+.hero {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  scale: 0.58;
+  transform-origin: center;
+}
+
+/* ========= BACKGROUND WAVES ========= */
+.wave span {
+  position: absolute;
+  top: 6rem;
+  left: 0;
+  border-radius: 100rem;
+}
+
+/* Darkest wave (top depth) */
+.wave span:nth-child(1) {
+  width: 300rem;
+  height: 300rem;
+  background: #0B4C5A;
+  animation: rotate 12s linear infinite;
+}
+
+/* Mid-depth wave */
+.wave span:nth-child(2) {
+  width: 310rem;
+  height: 310rem;
+  background: #1E6F82;
+  animation: rotate 28s linear infinite;
+}
+
+/* Bottom flood layer */
+.wave span:nth-child(3) {
+  width: 320rem;
+  height: 320rem;
+  background: #47A9D8;
+  animation: rotate 40s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: translate(-30%, -90%) rotate(0deg);
+  }
+  to {
+    transform: translate(-30%, -90%) rotate(360deg);
+  }
+}
+
+/* ========= CENTERING ========= */
+.hero-center {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  z-index: 2;
+}
+
+/* ========= TEXT BOX ========= */
+.box {
+  position: relative;
+  text-align: center;
+  transform: translateY(-2.5rem);
+}
+
+/* ========= SIZER (GIVES HEIGHT) ========= */
+.sizer {
+  font-size: 6rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0.015em;
+  white-space: nowrap;
+  visibility: hidden;
+}
+
+/* ========= TEXT LAYERS ========= */
+.box h2 {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+
+  font-size: 6rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0.015em;
+  white-space: nowrap;
+
+  overflow: hidden;
+}
+
+/* OUTLINE (STATIC) */
+.box h2:nth-child(2) {
+  color: transparent;
+  -webkit-text-stroke: 1.8px #6EC1E4;
+}
+
+/* WAVE FILLS */
+.box h2:nth-child(n+3) {
+  color: #6EC1E4;
+  animation: waveText 2.6s ease-in-out infinite;
+}
+
+/* DEPTH */
+.box h2:nth-child(4) { opacity: 0.6; animation-delay: .25s; }
+.box h2:nth-child(5) { opacity: 0.35; animation-delay: .5s; }
+.box h2:nth-child(6) { opacity: 0.2; animation-delay: .75s; }
+.box h2:nth-child(7) { opacity: 0.1; animation-delay: 1s; }
+
+/* ========= WAVE ANIMATION ========= */
+@keyframes waveText {
+  0%, 100% {
+    clip-path: polygon(
+      0 65%,
+      0 100%,
+      100% 100%,
+      100% 65%,
+      90% 60%,
+      80% 55%,
+      65% 58%,
+      50% 62%,
+      35% 60%,
+      20% 58%,
+      10% 60%
+    );
+  }
+
+  50% {
+    clip-path: polygon(
+      0 45%,
+      0 100%,
+      100% 100%,
+      100% 45%,
+      90% 50%,
+      80% 55%,
+      65% 52%,
+      50% 48%,
+      35% 50%,
+      20% 52%,
+      10% 50%
+    );
+  }
+}
+
+/* ========= FIXED CTA (NO SCALE) ========= */
+.fixed-cta {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+}
+
+.get-started-btn {
+  pointer-events: auto;
+
+  margin-top: 8rem;
+  padding: 0.9rem 2.8rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 999px;
+
+  background: #6EC1E4;
+  color: #083A42;
+  border: none;
+  cursor: pointer;
+
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.get-started-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(110, 193, 228, 0.35);
+}
+
+/* Offset landing content for sidebar */
+.landing-with-sidebar {
+  margin-left: 320px; /* same as sidebar width */
+  min-height: 100vh;
+}
+
