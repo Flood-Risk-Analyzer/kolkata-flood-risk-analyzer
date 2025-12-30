@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 
-const API_BASE = "http://127.0.0.1:8000";
+const API_BASE = "https://kolkata-flood-risk-api.onrender.com";
+
 const SIDEBAR_WIDTH = 96;
 const LOADER_DURATION = 3000; // 1.5s × 2
 
